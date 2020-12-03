@@ -32,3 +32,20 @@ var a = map(companies, function(value, index, array){
     return value;
 })
 console.log(a)
+
+// =========================================== Reduce Function
+
+function reduce(arr, func, value){
+    let result = value === undefined ? 0 : value;
+
+    for(let i=0; i<arr.length; i++){
+        result = func(result, arr[i], arr);
+    }
+return result;
+}
+
+var reduce1 = reduce(arr, function(total, value){
+    return total + value;
+},0)
+
+console.log(reduce1);
